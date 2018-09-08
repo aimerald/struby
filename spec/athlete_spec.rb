@@ -13,8 +13,52 @@ RSpec.describe Athlete do
   end
 
   context '#new' do
+    it 'return athlete using params' do
+      params = {
+        'id' => 19_600_913,
+        'username' => 'aimerald',
+        'resource_state' => 3,
+        'firstname' => 'UG',
+        'lastname' => 'Muscle',
+        'city' => '北区',
+        'state' => '大阪市',
+        'country' => '日本',
+        'sex' => 'M',
+        'premium' => true,
+        'summit' => true,
+        'created_at' => '2017-01-27T06:52:56Z',
+        'updated_at' => '2018-09-06T15:11:16Z',
+        'badge_type_id' => 1,
+        'profile_medium' => 'https://dgalywyr863hv.cloudfront.net/pictures/athletes/19600913/5686228/6/medium.jpg',
+        'profile' => 'https://dgalywyr863hv.cloudfront.net/pictures/athletes/19600913/5686228/6/large.jpg',
+        'friend' => nil,
+        'follower' => nil,
+        'email' => 'aimerald3@gmail.com',
+        'follower_count' => 23,
+        'friend_count' => 51,
+        'mutual_friend_count' => 0,
+        'athlete_type' => 0,
+        'date_preference' => '%m/%d/%Y',
+        'measurement_preference' => 'meters',
+        'clubs' => [],
+        'ftp' => 198,
+        'weight' => 56.5,
+        'bikes' => [],
+        'shoes' => []
+      }
+      athlete = Struby::Athlete.new(params)
+      params.each do |k, v|
+        expect(athlete.send(k.to_sym)).to eq v
+      end
+    end
+
     it 'return athlete instance' do
       expect(@athlete.class).to eq Struby::Athlete
+    end
+
+    it 'raise error when argment is invalid' do
+      expect { Struby::Athlete.new(1) }.to raise_error(ArgumentError)
+      expect { Struby::Athlete.new([]) }.to raise_error(ArgumentError)
     end
   end
 

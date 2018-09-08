@@ -15,9 +15,13 @@ module Struby
                 :clubs, :ftp, :weight, :bikes, :shoes,
                 :original_params
 
-    def initialize(athlete_id: nil)
-      athlete = Struby::Client.fetch_athlete(athlete_id)
-      athlete.each { |k, v| instance_variable_set("@#{k}", v) }
+    def initialize(params = nil)
+      raise ArgumentError unless [Hash, String, NilClass].include?(params.class)
+
+      if params.nil? || params.is_a?(String)
+        params = Struby::Client.fetch_athlete(params)
+      end
+      params.each { |k, v| instance_variable_set("@#{k}", v) }
       @bikes = set_bike_instance
       @clubs = set_club_instance
     end
