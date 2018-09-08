@@ -93,4 +93,16 @@ RSpec.describe Athlete do
       expect(@athlete.power_weight_ratio).to eq 6.5
     end
   end
+
+  context '#activites' do
+    it 'returns activity' do
+      VCR.use_cassette('fetch_activities') do
+        activities = @athlete.activities
+        expect(activities.count).to eq 30
+        activities.each do |activity|
+          expect(activity.class).to eq Struby::Activity
+        end
+      end
+    end
+  end
 end

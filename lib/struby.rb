@@ -2,6 +2,7 @@ require 'struby/version'
 require 'struby/athlete'
 require 'struby/bike'
 require 'struby/club'
+require 'struby/activity'
 
 module Struby
   module_function

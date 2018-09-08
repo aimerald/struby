@@ -13,7 +13,7 @@ module Struby
                 :friend_count, :mutual_friend_count,
                 :athlete_type, :date_preference, :measurement_preference,
                 :clubs, :ftp, :weight, :bikes, :shoes,
-                :original_params
+                :original_params, :athlete
 
     def initialize(params = nil)
       raise ArgumentError unless [Hash, String, NilClass].include?(params.class)
@@ -32,6 +32,12 @@ module Struby
 
     def power_weight_ratio
       ftp.to_f / weight.to_f
+    end
+
+    def activities
+      Struby::Client.fetch_activities.map do |activity|
+        Struby::Activity.new(activity)
+      end
     end
 
     private

@@ -22,6 +22,14 @@ module Struby
       def fetch_club(club_id)
         client.retrieve_a_club(club_id)
       end
+
+      def fetch_activity(activity_id)
+        @client.retrieve_an_activity(activity_id)
+      end
+
+      def fetch_activities
+        @client.list_athlete_activities
+      end
     end
   end
 end
