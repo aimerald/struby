@@ -1,0 +1,112 @@
+AllCops:
+  TargetRubyVersion: 2.4.1
+  DisplayCopNames: true
+
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - test/factories/*
+
+Metrics/LineLength:
+  Max: 128 # cookpad style
+  Exclude:
+    - test/**/*
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/AbcSize:
+  Max: 20
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining # cookpad style
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FormatString:
+  EnforcedStyle: percent
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/StringLiterals:
+  Exclude:
+    - test/factories/*
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Layout/TrailingWhitespace:
+  Exclude:
+    - test/factories/*
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - test/factories/*
+
+Style/SymbolArray:
+  Enabled: false
+
+Performance/Casecmp:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Exclude:
+    - test/**/*
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 128
+
+Metrics/MethodLength:
+  Max: 20
+
+Naming/PredicateName:
+  Enabled: true
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: symmetrical
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Style/EmptyElse:
+  EnforcedStyle: empty
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+Style/GuardClause:
+  MinBodyLength: 3
