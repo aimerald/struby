@@ -1,3 +1,7 @@
+
+## がんばルビィ
+![がんばルビィ](https://raw.githubusercontent.com/aimerald/struby/master/images/do_your_rubesty.jpg?token=AHmiDaD_Kv_M-nkcmKKQTUH2vyeZdjaGks5bnR89wA%3D%3D)
+
 # Struby
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/struby`. To experiment with that code, run `bin/console` for an interactive prompt.
