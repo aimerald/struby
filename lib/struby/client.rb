@@ -18,6 +18,10 @@ module Struby
       def fetch_gear(gear_id)
         client.retrieve_gear(gear_id)
       end
+
+      def fetch_club(club_id)
+        client.retrieve_a_club(club_id)
+      end
     end
   end
 end

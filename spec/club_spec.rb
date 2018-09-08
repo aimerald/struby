@@ -27,5 +27,18 @@ RSpec.describe Club do
         expect(club.send(key.to_sym)).to eq value
       end
     end
+
+    it 'return club when designation by id' do
+      VCR.use_cassette('fetch_club') do
+        club_id = '26315'
+        club = Struby::Club.new(club_id)
+        expect(club.id).to eq club_id.to_i
+        expect(club.name).to eq 'I am Specialized'
+      end
+    end
+
+    it 'rases when clud_id is not string or hash' do
+      expect { Struby::Club.new(1) }.to raise_error(ArgumentError)
+    end
   end
 end
