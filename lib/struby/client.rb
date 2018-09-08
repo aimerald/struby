@@ -14,6 +14,10 @@ module Struby
           client.retrieve_another_athlete(athlete_id)
         end
       end
+
+      def fetch_gear(gear_id)
+        client.retrieve_gear(gear_id)
+      end
     end
   end
 end

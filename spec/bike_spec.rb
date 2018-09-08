@@ -9,5 +9,25 @@ RSpec.describe Bike do
       expect(bike.primary).to eq params[:primary]
       expect(bike.resource_state).to eq params[:resource_state]
     end
+
+    it 'return bike when designation by id' do
+      gear_id = 'b4633214'
+      VCR.use_cassette('fetch_bike') do
+        bike = Struby::Bike.new(gear_id)
+        expect(bike.id).to eq gear_id
+        expect(bike.name).to eq 'SWORKS Tarmac SL6 Arc-en-Ciel'
+      end
+    end
+
+    it 'raises when args is not Hash or String' do
+      expect { Struby::Bike.new(1) }.to raise_error(ArgumentError)
+    end
+
+    it 'raises when wrong gear_id' do
+      VCR.use_cassette('wrong_gear_id') do
+        wrong_gear_id = '------'
+        expect { Struby::Bike.new(wrong_gear_id) }.to raise_error(Strava::Api::V3::ClientError)
+      end
+    end
   end
 end
