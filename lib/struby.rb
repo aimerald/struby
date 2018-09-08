@@ -1,5 +1,12 @@
 require 'struby/version'
+require 'struby/athlete'
+require 'struby/bike'
+require 'struby/club'
 
 module Struby
-  # Your code goes here...
+  module_function
+
+  def token(strava_token = nil)
+    strava_token || ENV['STRAVA_TOKEN']
+  end
 end

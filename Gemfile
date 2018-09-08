@@ -7,3 +7,5 @@ gemspec
 gem 'pry'
 gem 'rubocop'
 gem 'strava-api-v3'
+gem 'vcr'
+gem 'webmock'
