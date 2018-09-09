@@ -4,6 +4,7 @@ require 'struby/bike'
 require 'struby/club'
 require 'struby/activity'
 require 'struby/activities'
+require 'struby/distance'
 
 module Struby
   module_function
