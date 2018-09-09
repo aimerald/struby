@@ -26,7 +26,48 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You need specify the ENV_VAR about `STRAVA_TOKEN`.
+
+```
+require 'struby'
+
+athlete = Athlete.new
+
+puts athlete.power_weight_ratio
+# => 3.5
+
+bike = athlete.bikes.first
+puts bike.name
+# => 'Tarmac SL6'
+
+puts bike.distance
+# => 196.34
+puts bike.distance.to_mile
+# => 122
+
+clubs = athlete.clubs
+puts clubs.first.name
+# => 'I am Specialized'
+
+activities = athlete.activities
+# WIP
+activities.growth(:power)
+# => up to 3w!!!
+
+activity = activities.first
+
+puts activity.avg_cadence
+# => 71
+
+puts activity.max_power
+# 460w
+
+puts activity.distance
+# => 196.34
+
+puts activity.distance.to_mile
+# => 122
+```
 
 ## Development
 
