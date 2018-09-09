@@ -34,10 +34,8 @@ module Struby
       ftp.to_f / weight.to_f
     end
 
-    def activities
-      Struby::Client.fetch_activities.map do |activity|
-        Struby::Activity.new(activity)
-      end
+    def activities(amount = 200)
+      @activities ||= Struby::Activity.activities(amount)
     end
 
     private

@@ -3,6 +3,7 @@ require 'struby/athlete'
 require 'struby/bike'
 require 'struby/club'
 require 'struby/activity'
+require 'struby/activities'
 
 module Struby
   module_function

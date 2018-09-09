@@ -98,11 +98,18 @@ RSpec.describe Athlete do
     it 'returns activity' do
       VCR.use_cassette('fetch_activities') do
         activities = @athlete.activities
-        expect(activities.count).to eq 30
+        expect(activities.count).to eq 200
         activities.each do |activity|
           expect(activity.class).to eq Struby::Activity
         end
       end
+    end
+  end
+
+  it 'test' do
+    VCR.use_cassette('fetch_activities') do
+      activities = @athlete.activities
+      activities.growth_by_power
     end
   end
 end

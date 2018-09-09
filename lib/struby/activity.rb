@@ -22,6 +22,22 @@ module Struby
         params = Struby::Client.fetch_activity(params)
       end
       params.each { |k, v| instance_variable_set("@#{k}", v) }
+      @start_date = Time.parse(start_date)
+      @start_date_local = Time.parse(start_date_local)
+    end
+
+    class << self
+      def find(activity_id)
+        new(Struby::Client.fetch_activity(activity_id))
+      end
+
+      def activities(amount)
+        Struby::Activities.new(
+          Struby::Client.fetch_activities(amount).map do |activity|
+            Struby::Activity.new(activity)
+          end
+        )
+      end
     end
   end
 end

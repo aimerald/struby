@@ -27,8 +27,8 @@ module Struby
         @client.retrieve_an_activity(activity_id)
       end
 
-      def fetch_activities
-        @client.list_athlete_activities
+      def fetch_activities(amount)
+        @client.list_athlete_activities({ per_page: amount })
       end
     end
   end
