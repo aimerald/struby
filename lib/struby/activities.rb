@@ -1,7 +1,7 @@
 module Struby
   class Activities < Array
     def growth_by_power
-      binding.pry
+      # binding.pry implement
     end
   end
 end
